@@ -1,0 +1,47 @@
+.setting-image{
+	border: 1px solid #ccc;
+}
+
+.setting-image:hover{
+	opacity:0.5;
+}
+
+.setting:hover{
+	opacity:0.9;
+}
+
+.featurette-divider{
+	border-top: 2px solid #ccc;
+}
+
+.image-setting{
+	height: 50px;
+	width: 60px;
+	margin-right: 20px;
+}
+
+#contacts>li{
+	list-style: none;
+	margin-bottom: 20px;
+	font-size: 18pt;
+}
+
+#footer{
+	margin: -60px 0px 0px 0px;
+}
+
+.headline{
+	padding: 0px 0px;
+}
+
+.ajust{
+	float:right;
+}
+
+#logout{
+	border:none;
+	background-color: white;
+	width: 100%;
+	text-align: left;
+	padding: 5px 5px 5px 20px;
+}
