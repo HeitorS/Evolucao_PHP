@@ -1,28 +1,26 @@
 <?php
 
-	class Connection 
-	{
-	 	private $conn;
+require_once 'config.php';
 
-		public function connection()
-		{
-			try
-			{
-				$conn = mysqli_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE) or die(mysqli_connect_error());
-				return $conn;
-			}
-			catch (Exception $e)
-			{
-				echo "Erro {$e->getMessage()}";
-				return null;
-			}
-		}
+class Connection {
 
-		public function desconnect($conn)
-		{
-			mysqli_close($conn) or die(mysqli_error($conn));
-		}
+    private static $instance;
+    
+    public static function getInstance(){
+        if (!isset(self::$instance)){
+            try {
+                self::$instance = new PDO('mysql:host ='.DB_HOSTNAME.';dbname='.DB_DATABASE,DB_USERNAME,DB_PASSWORD);
+                self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                self::$instance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+            } catch (PDOException $ex) {
+                echo $ex->getMessage();
+            }
+        }
+        return self::$instance;
+    }
+    
+    public static function prepare($sql){
+        return self::getInstance()->prepare($sql);
+    }
 
-	}
-?>
-	
+}

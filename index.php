@@ -1,294 +1,199 @@
+<?php
+
+function __autoload($class_name) {
+    require_once './controller/' . $class_name . '.php';
+}
+?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Index</title>
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-theme.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-theme.min.css">
-        <script type="text/javascript" rsc="resources/javascript/bootstrap.js"></script>
-        <script type="text/javascript" rsc="resources/javascript/bootstrap.min.js"></script>
-        <script type="text/javascript" rsc="resources/javascript/npm.js"></script>
+        <meta name="description" content="Index"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="author" content="Heitor Victor"/>
+        <link href="resources/css/bootstrap.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-
-
-    </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>One Page Wonder - Start Bootstrap Template</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="resources/css/one-page-wonder.css" rel="stylesheet">
-
-        <!-- Custom JavaScript -->
-        <script type="text/javascript" src="resources/javascript/jquery.js"></script>
-        <script type="text/javascript" src="resources/javascript/bootstrap.js"></script>
-
-        <!-- Ajustes de Imagem -->
-        <link rel="stylesheet" type="text/css" href="resources/css/index_public.css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body>
-        <?php
-        session_start("user");
-        ?>
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">Gil Equipamentos</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#about">Sobre nós</a>
-                        </li>
-                        <li>
-                            <a href="#accessory">Acessórios</a>
-                        </li>
-                        <li>
-                            <a href="#equipaments">Equipamentos</a>
-                        </li>
-                        <li>
-                            <a href="#support">Suportes</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contato</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav col-lg-3 col-md-3 col-sm-12 col-xs-12" style="float:right;">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-envelope"></i> <b class="caret"></b></a>
-                            <ul class="dropdown-menu message-dropdown">
-                                <li class="message-preview pull-right">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="pull-left">
-                                                <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                            </span>
-                                            <div class="media-body">
-                                                <?php
-                                                if ((!isset($_SESSION['firstName']) == "") and ( !isset($_SESSION['lastName']) == "")) {
-                                                    echo "<h5 class='media-heading'><strong>" . $_SESSION['firstName'] . " " . $_SESSION['lastName'] . "</strong>";
-                                                }
-                                                ?>
-                                                </h5>
-                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="message-footer">
-                                    <a href="#">Read All New Messages</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i> <b class="caret"></b></a>
-                            <ul class="dropdown-menu alert-dropdown">
-                                <li>
-                                    <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="#">View All</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <?php
-                                if ((!isset($_SESSION['firstName']) == "") and ( !isset($_SESSION['lastName']) == "")) {
-                                    echo $_SESSION['firstName'] . " " . $_SESSION['lastName'] . "<b class='caret'></b>";
-                                }
-                                ?>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i> Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="glyphicon glyphicon-envelope"></i> Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <button id="logout"><i class="glyphicon glyphicon-off"></i> Log Out</a></button>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-
-        <!-- Full Width Image Header -->
-        <header class="header-image">
-            <div class="headline">
-                <div class="container">
-                    <div id="homeSlider" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#homeSlider" data-slide-to="0" class="active"></li>
-                            <li data-target="#homeSlider" data-slide-to="1"></li>
-                            <li data-target="#homeSlider" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active"><img src="http://placehold.it/1900x800" alt="image1"></div>
-                            <div class="item"><img src="http://placehold.it/1900x800" alt="image2"></div>
-                            <div class="item"><img src="http://placehold.it/1900x800" alt="image3"></div>
-                        </div>
-                        <a class="left carousel-control" href="#homeSlider" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="right carousel-control" href="#homeSlider" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Page Content -->
         <div class="container">
+            <header class="masthead">
+                <h1 class="muted"> PDO na Prática</h1>
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
 
-            <hr class="featurette-divider" id="about">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.php">Página Principal<span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">Inserir</a></li>
+                                <li><a href="#">Ler</a></li>
+                                <li><a href="#">Atualizar</a></li>
+                                <li><a href="#">Excluir</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header>
+            
+            <?php
+            $usuario = new Usuarios();
 
-            <!-- First Featurette -->
-            <div class="featurette" >
-                <img class="featurette-image img-circle img-responsive pull-left" src="resources/imagens/logo_ge.jpg">
-                <h2 class="featurette-heading" style="font-size: 40px;">Sobre nós
-                    <span class="text-muted">Gil Equipamentos Esportivos LTDA</span>
-                </h2>
-                <p class="lead">Criada em 1996, a Gil Equipamentos atua no ramo de acessórios para ginástica, prezando sempre a qualidade de seus produtos e a excelência no atendimento de seus clientes.
-                    <br/><br/>
-                    São anos de Experiência com atendimento personalizado à  Lojistas, Clubes, Academias e Clientes Domésticos.
-                    <br/><br/>
-                    Atendemos em todo o terrítório brasileiro.
-                    <br/><br/>
-                    Solicite o atendimento de um de nossos representantes comerciais e conheça nosso diferencial!</p>
-            </div>
+            if (isset($_POST['cadastrar'])):
+                $nome = $_POST['nome'];
+                $email = $_POST['email'];
 
-            <hr class="featurette-divider" id="accessory">
+                $usuario->setNome($nome);
+                $usuario->setEmail($email);
+                if ($usuario->insert()) {
+                    echo "<div class='alert alert-success' role='alert'>Usuário inserido com sucesso</div>";
+                }
 
-            <!-- First Featurette -->
-            <div class="featurette" >
-                <a href="#" class="setting"><img class="featurette-image img-circle img-responsive pull-right setting-image" src="resources/imagens/protetor.jpg"></a>
-                <h2 class="featurette-heading"> Acessórios
-                    <span class="text-muted">para equipamentos</span>
-                </h2>
-                <p class="lead">Todos os acessórios que você precisa para o seu equipamento, você encontrará aqui. Também encontrará acessórios para seu uso pessoal e para o melhoramento do seu desempenho físico.<br/>
-                    <strong><u>Clique na imagem para mais Acessórios</u></strong></p>
-            </div>
+            endif;
+            ?>
+            
+            <?php
+            if(isset($_GET['acao']) && $_GET['acao'] == 'deletar'):
+                $id = $_GET['id'];
+                if ($usuario->delete($id)) {
+                    echo "<div class='alert alert-success' role='alert'>Usuário deletado com sucesso</div>";
+                }
+            endif;
+            ?>
+            
+            <?php
+            if (isset($_POST['salvar'])):
+                $id = $_POST['id'];
+                $nome = $_POST['nome'];
+                $email = $_POST['email'];
 
-            <hr class="featurette-divider" id="equipaments">
+                $usuario->setNome($nome);
+                $usuario->setEmail($email);
+                if ($usuario->update($id)) {
+                    echo "<div class='alert alert-success' role='alert'>Usuário alterado com sucesso</div>";
+                }
 
-            <!-- Second Featurette -->
-            <div class="featurette" >
-                <a href="#" class="setting"><img class="featurette-image img-circle img-responsive pull-left setting-image" src="resources/imagens/halteres.jpg"></a>
-                <h2 class="featurette-heading">Equipamentos
-                    <span class="text-muted">para melhorar o desempenho</span>
-                </h2>
-                <p class="lead">Todos os equipamentos produzidos por nós tem a melhor qualidade possível investida neles, pois buscamos sempre o melhor para os nossos cliente. Nossos produtos passam por um setor de qualidade para que possam chegar aos nossos clientes.<br/>
-                    <strong><u>Clique na imagem para mais Equipamentos</u></strong></p>
-            </div>
+            endif;
+            ?>
 
-            <hr class="featurette-divider" id="support">
-
-            <!-- Third Featurette -->
-            <div class="featurette" >
-                <a href="#" class="setting"><img class="featurette-image img-circle img-responsive pull-right setting-image" src="resources/imagens/suporte.jpg"></a>
-                <h2 class="featurette-heading">Suportes
-                    <span class="text-muted">para seus equipamentos</span>
-                </h2>
-                <p class="lead">O suporte certo para o equipamento certo. Se busca manter os seus produto organizados e bonitos o melhor a se fazer é comprar um suporte adequado para e feito sob medida para ele. E os melhores equipamentos você encontra aqui.<br/>
-                    <strong><u>Clique na imagem para mais Suportes</u></strong></p>
-            </div>
-
-            <hr class="featurette-divider" id="contact">
-
-            <!-- Third Featurette -->
-            <div class="featurette">
-                <img class="featurette-image img-circle img-responsive pull-left" src="resources/imagens/email.png">
-                <h2 class="featurette-heading">Contatos</h2>
-                <p class="lead">
-                <ul id=contacts>
-                    <li><strong>E-mail: </strong><u><a href="https://mail.google.com/mail/u/0/#inbox?compose=15a3ed58db03d81d">gilequipamentos@terra.com.br</a></u></li>
-                    <li><strong>Telefone 1: </strong>(11) 5666-6920</li>
-                    <li><strong>Telefone 2: </strong>(11) 3938-3710</li>
-                    <li><strong>Celular 1: </strong>(11) 94352-3630</li>
-                    <li><strong>Celular 2: </strong>(11) 97242-2069</li>
-                    <li><strong>WhatsApp: </strong>(11) 97746-4388</li>
-                </ul>
-                </p>
-            </div>
-
-            <hr class="featurette-divider">        
-            <!-- Footer -->
-            <footer id="footer">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p> <img src="resources/imagens/logo.jpg" class="image-setting" /><strong>BIOS Company</strong></p>
+            <?php
+                if(isset($_GET['acao']) && $_GET['acao'] == 'editar'){
+                    $id = (int)$_GET['id'];
+                    $resultado = $usuario->find($id);
+            ?>
+            <form method="post" action="">
+                <div style="height: 80px;">
+                    <div class="col-lg-0 col-md-0 col-xs-0 col-sm-0">
+                        <div class="input-group">
+                            <?php echo "<input value='".$resultado->id."' name='id' type='hidden' class='form-control disabled' aria-describedby='basic-addon1'>";?>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                            <?php echo "<input value='".$resultado->nome."' name='nome' type='text' class='form-control' aria-describedby='basic-addon1'>";?>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <?php echo "<input value='".$resultado->email."' name='email' type='text' class='form-control' aria-describedby='basic-addon1'>";?>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="col-lg-1">
+                        <button type="submit" name="salvar" class="btn btn-sm btn-primary btn-create">Salvar Dados</button>
                     </div>
                 </div>
-            </footer>
+            </form>
+            <?php } else {?>
+            <form method="post" action="">
+                <div style="height: 80px;">
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
+                            <input name="nome" type="text" class="form-control" placeholder="Nome" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <input name="email" type="text" class="form-control" placeholder="exemplo@exemplo.com" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="col-lg-1">
+                        <button type="submit" name="cadastrar" class="btn btn-sm btn-primary btn-create">Cadastrar Dados</button>
+                    </div>
+                </div>
+            </form>
+            <?php } ?>
+            <div class="col-md-12 col-md-offset-0">
+                <div class="panel panel-default panel-table">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col col-xs-6">
+                                <h3 class="panel-title">Panel Heading</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-list">
+                            <thead>
+                                <tr>
+                                    <th class="hidden-xs text-center">ID</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center"><em class="glyphicon glyphicon-cog"></em></th>
+                                </tr> 
+                            </thead>
+                            <?php
+                                foreach ($usuario->findAll() as $key => $value):
+                            ?>
+                            <tbody>
+                                <td><?php echo $value->id;?></td>
+                                <td><?php echo $value->nome;?></td>
+                                <td><?php echo $value->email;?></td>
+                                <td align="center">
+                                    <?php echo "<a class='btn btn-default' href='index.php?acao=editar&id=".$value->id."'><em class='glyphicon glyphicon-pencil'></em></a>";?>
+                                    <?php echo "<a class='btn btn-danger' href='index.php?acao=deletar&id=".$value->id."' onclick='return confirm(\"Deseja realmente deletar\")'><em class='glyphicon glyphicon-trash'></em></a>";?>
+                                </td>
+                            </tbody>
+                                <?php endforeach;?>
+                        </table>
 
-        </div>
-        <!-- /.container -->
-
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col col-xs-4">Page 1 of 5
+                            </div>
+                            <div class="col col-xs-8">
+                                <ul class="pagination hidden-xs pull-right">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul>
+                                <ul class="pagination visible-xs pull-right">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
-
 </html>
