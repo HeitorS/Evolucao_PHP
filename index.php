@@ -4,7 +4,9 @@ function __autoload($class_name) {
     require_once './controller/' . $class_name . '.php';
 }
 ?>
+
 <?php include ('open_default.php'); ?>
+
 <?php
 $usuario = new Usuarios();
 

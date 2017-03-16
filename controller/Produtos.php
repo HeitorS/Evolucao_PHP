@@ -68,7 +68,7 @@ class Produtos extends CRUD {
         $stmt->bindParam(':altura', $this->altura);
         $stmt->bindParam(':largura', $this->largura);
         $stmt->bindParam(':profundidade', $this->profundidade);
-        $stmt->bindParam(':descicao', $this->descricao, PDO::PARAM_STR);
+        $stmt->bindParam(':descricao', $this->descricao, PDO::PARAM_STR);
         $stmt->bindParam(':cor', $this->cor, PDO::PARAM_STR);
         return $stmt->execute();
     }
